@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mania</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: #0f3460;
+            padding: 15px;
+        }
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #e94560;
+        }
+        .search-bar input {
+            width: 250px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #e94560, #903749);
+            color: white;
+            border-radius: 10px;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #0f3460;
+            border-radius: 10px;
+            animation: slide-in 1s ease-in-out;
+        }
+        @keyframes slide-in {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .footer {
+            background-color: #16213e;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid #e94560;
+        }
+        .btn {
+            background-color: #e94560;
+            border: none;
+        }
+        .btn:hover {
+            background-color: #b33951;
+        }
+        #music-results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Music Mania Logo"> Music Mania
+            </a>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search music...">
+                <button class="btn" onclick="searchMusic()">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Welcome to Music Mania</h1>
+        <p>Your ultimate destination for music and entertainment!</p>
+    </header>
+
+    <main class="container">
+        <section class="section" id="new-songs">
+            <h2>Newly Added Songs</h2>
+            <div id="new-songs-container"></div>
+        </section>
+        <section class="section" id="top-songs">
+            <h2>Top Songs</h2>
+            <div id="top-songs-container"></div>
+        </section>
+        <section class="section" id="romantic-songs">
+            <h2>Romantic Songs</h2>
+            <div id="romantic-songs-container"></div>
+        </section>
+        <section class="section" id="heartbroken-songs">
+            <h2>Heartbroken Songs</h2>
+            <div id="heartbroken-songs-container"></div>
+        </section>
+        <section class="section" id="love-songs">
+            <h2>Love Songs</h2>
+            <div id="love-songs-container"></div>
+        </section>
+        <section class="section" id="artists">
+            <h2>Artists</h2>
+            <div id="artists-container"></div>
+        </section>
+        <section class="section" id="movies">
+            <h2>Movies</h2>
+            <div id="movies-container"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Music Mania. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchMusic() {
+            const query = document.getElementById('search-input').value;
+            if (!query) return;
+
+            axios.get(`https://itunes.apple.com/search?term=${query}&entity=musicTrack&limit=10`)
+                .then(response => {
+                    const results = response.data.results;
+                    document.getElementById('new-songs-container').innerHTML = renderSongs(results);
+                })
+                .catch(error => console.error('Error fetching music:', error));
+        }
+
+        function renderSongs(results) {
+            return results.map(track => `
+                <p><strong>${track.trackName}</strong> by ${track.artistName}</p>
+                <audio controls>
+                    <source src="${track.previewUrl}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `).join('');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
