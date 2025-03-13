@@ -13,6 +13,8 @@
     
     <script src="img/index.js"></script>
     
+    
+    
     <style>
         body {
             background: linear-gradient(135deg, #3fc9b4, #89ef87);
@@ -73,7 +75,6 @@
             max-width: 200px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s;
-            animation: moveRightToLeft 10s linear infinite;
         }
         .song-card:hover {
             transform: scale(1.05);
@@ -119,15 +120,6 @@
                 width: calc(100% - 100px);
             }
         }
-
-        @keyframes moveRightToLeft {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
     </style>
 </head>
 <body>
@@ -152,17 +144,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Navigation Links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#category">Category</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signin">Sign In</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">Sign Up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sortby">Sort By</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#dj-mix">DJ Mix</a></li>
-                </ul>
                 <!-- Search Bar -->
                 <div class="ms-auto search-bar d-flex">
                     <input type="text" id="search-input" placeholder="Search music..." class="form-control me-2">
@@ -173,7 +154,7 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="header" id="home">
+    <header class="header">
         <h1>Welcome to Music Mania</h1>
         <p>Your ultimate destination for music and entertainment!</p>
     </header>
@@ -186,6 +167,7 @@
             <div class="row justify-content-center" id="new-songs-container">
                 <!-- Song Card Example -->
                 
+
                 <div class="col-md-3 col-sm-6">
                     <div class="song-card">
                         <img src="/img/Aashiqui_2_(Poster).jpg" alt="Song Image">
@@ -199,6 +181,7 @@
 
                     </div>
                 </div>
+
 
                 <div class="col-md-3 col-sm-6">
                     <div class="song-card">
@@ -214,6 +197,8 @@
                     </div>
                 </div>
 
+
+
                 <div class="col-md-3 col-sm-6">
                     <div class="song-card">
                         <img src="/img/Aashiqui_2_(Poster).jpg" alt="Song Image">
@@ -228,6 +213,7 @@
                     </div>
                 </div>
 
+
                 <div class="col-md-3 col-sm-6">
                     <div class="song-card">
                         <img src="/img/Aashiqui_2_(Poster).jpg" alt="Song Image">
@@ -241,6 +227,7 @@
 
                     </div>
                 </div>
+
 
                 <!-- Repeat song-card divs for more songs -->
             </div>
@@ -264,73 +251,6 @@
                 <button class="btn btn-custom m-2" onclick="mixSongs()">Mix Songs</button>
             </div>
             <audio id="djAudio" controls class="mt-4" style="width: 100%; max-width: 600px;"></audio>
-        </section>
-
-        <!-- About Section -->
-        <section class="section" id="about">
-            <h2>About Us</h2>
-            <p>Learn more about Music Mania and our mission to bring you the best music experience.</p>
-        </section>
-
-        <!-- Category Section -->
-        <section class="section" id="category">
-            <h2>Categories</h2>
-            <p>Explore music by different categories and genres.</p>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section" id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us for any queries or support.</p>
-        </section>
-
-        <!-- Sign In Section -->
-        <section class="section" id="signin">
-            <h2>Sign In</h2>
-            <p>Access your account by signing in.</p>
-            <form onsubmit="signIn(event)">
-                <div class="mb-3">
-                    <label for="signin-email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="signin-email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="signin-password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="signin-password" required>
-                </div>
-                <button type="submit" class="btn btn-custom">Sign In</button>
-            </form>
-        </section>
-
-        <!-- Sign Up Section -->
-        <section class="section" id="signup">
-            <h2>Sign Up</h2>
-            <p>Create a new account to enjoy more features.</p>
-            <form onsubmit="signUp(event)">
-                <div class="mb-3">
-                    <label for="signup-email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="signup-email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="signup-password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="signup-password" required>
-                </div>
-                <button type="submit" class="btn btn-custom">Sign Up</button>
-            </form>
-        </section>
-
-        <!-- Sort By Section -->
-        <section class="section" id="sortby">
-            <h2>Sort By</h2>
-            <p>Sort songs by different criteria.</p>
-            <div class="sort-controls d-flex justify-content-center align-items-center flex-wrap">
-                <select id="sort-criteria" class="form-select w-auto m-2">
-                    <option value="popularity">Popularity</option>
-                    <option value="release-date">Release Date</option>
-                    <option value="alphabetical">Alphabetical</option>
-                    <!-- Add more sort options -->
-                </select>
-                <button class="btn btn-custom m-2" onclick="sortSongs()">Sort</button>
-            </div>
         </section>
     </main>
 
@@ -367,83 +287,40 @@
             // Implement actual search functionality here
         }
 
-        // Play Song Function
-        function playSong(songId) {
-            // Get all audio elements
-            let audios = document.querySelectorAll('audio');
 
-            // Iterate over all audio elements
-            audios.forEach(audio => {
-                let btn = audio.parentElement.querySelector('button');
 
-                if (audio.id === songId) {
-                    // If this is the selected song
-                    if (audio.paused) {
-                        audio.play();
-                        btn.textContent = 'Pause';
-                    } else {
-                        audio.pause();
-                        btn.textContent = 'Play';
-                    }
-                } else {
-                    // Pause any other playing songs
-                    if (!audio.paused) {
-                        audio.pause();
-                        audio.currentTime = 0;
-                        btn.textContent = 'Play';
-                    }
-                }
-            });
-        }
+       // Play Song Function
+function playSong(songId) {
+    // Get all audio elements
+    let audios = document.querySelectorAll('audio');
 
-        // Sort Songs Function
-        function sortSongs() {
-            let criteria = document.getElementById("sort-criteria").value;
-            alert("Sorting songs by: " + criteria);
-            // Implement actual sort functionality here
-        }
+    // Iterate over all audio elements
+    audios.forEach(audio => {
+        let btn = audio.parentElement.querySelector('button');
 
-        // Sign Up Function
-        async function signUp(event) {
-            event.preventDefault();
-            const email = document.getElementById('signup-email').value;
-            const password = document.getElementById('signup-password').value;
-
-            const response = await fetch('http://localhost:8081/api/users/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email, password })
-            });
-
-            if (response.ok) {
-                alert('User signed up successfully');
+        if (audio.id === songId) {
+            // If this is the selected song
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = 'Pause';
             } else {
-                alert('Error signing up');
+                audio.pause();
+                btn.textContent = 'Play';
+            }
+        } else {
+            // Pause any other playing songs
+            if (!audio.paused) {
+                audio.pause();
+                audio.currentTime = 0;
+                btn.textContent = 'Play';
             }
         }
+    });
+}
 
-        // Sign In Function
-        async function signIn(event) {
-            event.preventDefault();
-            const email = document.getElementById('signin-email').value;
-            const password = document.getElementById('signin-password').value;
 
-            const response = await fetch('http://localhost:8081/api/users/signin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email, password })
-            });
 
-            if (response.ok) {
-                alert('User signed in successfully');
-            } else {
-                alert('Invalid email or password');
-            }
-        }
+
     </script>
 </body>
 </html>
