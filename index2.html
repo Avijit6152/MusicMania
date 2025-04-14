@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,26 +11,10 @@
   
 </head>
 <body>
-  <header>
-    <div class="logo">🎵 Music Mania</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#top-songs">Top Songs</a></li>
-        <li><a href="#artists">Artists</a></li>
-        <li><a href="#genres">Genres</a></li>
-       
-      </ul>
-    </nav>
-    <button id="toggleTheme">🌙 Dark Mode</button>
-  </header>
+ 
 
   <main>
-    <section class="hero">
-      <h1>Welcome to Music Mania 🎶</h1>
-      <p>Enjoy your favorite music anytime, anywhere</p>
-    </section>
+   
 
     <section class="scrolling-section">
         <h2 style="text-align:center;">🎧 Trending Now</h2>
@@ -78,102 +62,7 @@
         </div>
       </section>
 
-    <section class="video-section" id="video-player">
-      <h2>🎬 Watch Music Videos</h2>
-      <video class="video-player" controls poster="https://via.placeholder.com/800x450?text=Video+Poster">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </section>
-   
-
-    <section id="top-songs">
-        <h2 class="section-title">🔥 Top Songs</h2>
-        <div class="card-grid">
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Top+Song+1" alt="Top Song 1" />
-            <h4>Hit Song 1</h4>
-            <p>Artist: Rock Star</p>
-            <p>Lyrics: Available</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Top+Song+2" alt="Top Song 2" />
-            <h4>Hit Song 2</h4>
-            <p>Artist: Melody Queen</p>
-            <p>Lyrics: Available</p>
-          </div>
-        </div>
-      </section>
-  
-      <section id="artists">
-        <h2 class="section-title">🎤 Featured Artists</h2>
-        <div class="card-grid">
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Artist+1" alt="Artist 1" />
-            <h4>DJ Thunder</h4>
-            <p>Genre: EDM</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Artist+2" alt="Artist 2" />
-            <h4>Harmony</h4>
-            <p>Genre: Pop</p>
-          </div>
-        </div>
-      </section>
-  
-      <section id="genres">
-        <h2 class="section-title">🎼 Explore Genres</h2>
-        <div class="card-grid">
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Genre+Rock" alt="Rock Genre" />
-            <h4>Rock</h4>
-            <p>Energetic, Powerful</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Genre+Romantic" alt="Romantic Genre" />
-            <h4>Romantic</h4>
-            <p>Soulful, Love</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Genre+HipHop" alt="HipHop Genre" />
-            <h4>Hip Hop</h4>
-            <p>Beats, Urban Vibes</p>
-          </div>
-        </div>
-      </section>
-
-
-    <section id="languages">
-        <h2 class="section-title">🌐 Songs by Language</h2>
-        <div class="card-grid">
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Hindi" alt="Hindi Songs" />
-            <h4>Hindi</h4>
-            <p>Top Bollywood Hits</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=English" alt="English Songs" />
-            <h4>English</h4>
-            <p>International Chartbusters</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Tamil" alt="Tamil Songs" />
-            <h4>Tamil</h4>
-            <p>Kuthu, Melody & More</p>
-          </div>
-          <div class="music-card">
-            <img src="https://via.placeholder.com/200?text=Telugu" alt="Telugu Songs" />
-            <h4>Telugu</h4>
-            <p>Rhythmic Tollywood Beats</p>
-          </div>
-        </div>
-      </section>
-  
-
-    <section class="yt-embed-section" id="yt-embed">
-      <h2>🎥 YouTube Music Playlist</h2>
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI" allowfullscreen></iframe>
-    </section>
+    
   </main>
 
   <footer>
@@ -192,26 +81,136 @@
   <script>
 
 
-    const goTopBtn = document.getElementById('goTopBtn');
-
-    document.getElementById('toggleTheme').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    document.getElementById('footerToggleTheme').addEventListener('click', (e) => {
-      e.preventDefault();
-      document.body.classList.toggle('dark-mode');
-    });
-
-    window.addEventListener('scroll', () => {
-      goTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-    });
-
-    goTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
 
   </script>
 </body>
 </html>
+
+ -->
+
+ 
+<!-- 
+<section class="section" id="dj-mix">
+  <h2>DJ Mix Feature</h2>
+  <p>Select songs to mix together and create a custom DJ track.</p>
+  <div class="mix-controls d-flex justify-content-center align-items-center flex-wrap">
+      <select id="song1" class="form-select w-auto m-2">
+          <option value="C:\Users\aviji\OneDrive\Desktop\Music Mania\img\Sunn Raha Hai Male Aashiqui 2 320 Kbps.mp3">Song 1</option>
+          <option value="C:\Users\aviji\OneDrive\Desktop\Music Mania\img\Aasan Nahin Yahan Aashiqui 2 320 Kbps.mp3">Song 2</option>
+          
+      </select>
+      <select id="song2" class="form-select w-auto m-2">
+          <option value="C:\Users\aviji\OneDrive\Desktop\Music Mania\img\Aasan Nahin Yahan Aashiqui 2 320 Kbps.mp3">Song 3</option>
+          <option value="C:\Users\aviji\OneDrive\Desktop\Music Mania\img\Sunn Raha Hai Male Aashiqui 2 320 Kbps.mp3">Song 4</option>
+          
+      </select>
+      <button class="btn btn-custom m-2" onclick="mixSongs()">Mix Songs</button>
+  </div>
+  <audio id="djAudio" controls class="mt-4" style="width: 100%; max-width: 600px;"></audio>
+</section>
+
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p>Learn more about Music Mania and our mission to bring you the best music experience.</p>
+</section>
+
+
+<section class="section" id="category">
+  <h2>Categories</h2>
+  <p>Explore music by different categories and genres.</p>
+</section>
+
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>Get in touch with us for any queries or support.</p>
+</section>
+
+
+<section class="section" id="signin">
+  <h2>Sign In</h2>
+  <p>Access your account by signing in.</p>
+  <form onsubmit="signIn(event)">
+      <div class="mb-3">
+          <label for="signin-email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="signin-email" required>
+      </div>
+      <div class="mb-3">
+          <label for="signin-password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="signin-password" required>
+      </div>
+      <button type="submit" class="btn btn-custom">Sign In</button>
+  </form>
+</section>
+
+
+<section class="section" id="signup">
+  <h2>Sign Up</h2>
+  <p>Create a new account to enjoy more features.</p>
+  <form onsubmit="signUp(event)">
+      <div class="mb-3">
+          <label for="signup-email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="signup-email" required>
+      </div>
+      <div class="mb-3">
+          <label for="signup-password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="signup-password" required>
+      </div>
+      <button type="submit" class="btn btn-custom">Sign Up</button>
+  </form>
+</section>
+
+<section class="section" id="sortby">
+  <h2>Sort By</h2>
+  <p>Sort songs by different criteria.</p>
+  <div class="sort-controls d-flex justify-content-center align-items-center flex-wrap">
+      <select id="sort-criteria" class="form-select w-auto m-2">
+          <option value="popularity">Popularity</option>
+          <option value="release-date">Release Date</option>
+          <option value="alphabetical">Alphabetical</option>
+      
+      </select>
+      <button class="btn btn-custom m-2" onclick="sortSongs()">Sort</button>
+  </div>
+</section>  -->
+
+
+
+<!-- 
+ <header class="header" id="home">
+    <h1>Welcome to Music Mania</h1>
+    <p>Your ultimate destination for music and entertainment!</p>
+   
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/DALL·E 2025-02-26 10.49.57 - A vibrant and colorful logo for 'Music Mania', a music streaming platform. The design should feature a neon music note with a blend of pink, green, an.webp" alt="Music Mania Logo"> Music Mania
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+             
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#category">Category</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sortby">Sort By</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dj-mix">DJ Mix</a></li>
+                </ul>
+             
+                <div class="ms-auto search-bar d-flex">
+                    <input type="text" id="search-input" placeholder="Search music..." class="form-control me-2">
+                    <button class="btn btn-custom" onclick="searchMusic()">Search</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+     <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+
+   
+    </header> -->
