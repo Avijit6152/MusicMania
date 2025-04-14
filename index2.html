@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Mania</title>
+  <link rel="stylesheet" href="style2.css" />
+  
+  
+  
+  
+</head>
+<body>
+  <header>
+    <div class="logo">🎵 Music Mania</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#top-songs">Top Songs</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#genres">Genres</a></li>
+       
+      </ul>
+    </nav>
+    <button id="toggleTheme">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to Music Mania 🎶</h1>
+      <p>Enjoy your favorite music anytime, anywhere</p>
+    </section>
+
+    <section class="scrolling-section">
+        <h2 style="text-align:center;">🎧 Trending Now</h2>
+        <div class="scrolling-track">
+          <div class="scrolling-card">
+            <img src="https://via.placeholder.com/200x200?text=Song+1" alt="Song 1" />
+            <p>Top Hit 1</p>
+            <small>Artist: John Doe</small>
+            <small>Lyrics: Available</small>
+            <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio><br/>
+            <button>⬇ Download</button>
+            <button>❤️ Favorite</button>
+            <button>🔀 Shuffle</button>
+          </div>
+          <div class="scrolling-card">
+            <img src="https://via.placeholder.com/200x200?text=Song+2" alt="Song 2" />
+            <p>Top Hit 2</p>
+            <small>Artist: Jane Smith</small>
+            <small>Lyrics: Available</small>
+            <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio><br/>
+            <button>⬇ Download</button>
+            <button>❤️ Favorite</button>
+            <button>🔀 Shuffle</button>
+          </div>
+          <div class="scrolling-card">
+            <img src="https://via.placeholder.com/200x200?text=Movie+1" alt="Movie 1" />
+            <p>Movie Mix</p>
+            <small>Artist: DJ Remix</small>
+            <small>Lyrics: Available</small>
+            <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio><br/>
+            <button>⬇ Download</button>
+            <button>❤️ Favorite</button>
+            <button>🔀 Shuffle</button>
+          </div>
+          <div class="scrolling-card">
+            <img src="https://via.placeholder.com/200x200?text=Artist+1" alt="Artist 1" />
+            <p>Artist Vibes</p>
+            <small>Artist: Melody Star</small>
+            <small>Lyrics: Available</small>
+            <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"></audio><br/>
+            <button>⬇ Download</button>
+            <button>❤️ Favorite</button>
+            <button>🔀 Shuffle</button>
+          </div>
+        </div>
+      </section>
+
+    <section class="video-section" id="video-player">
+      <h2>🎬 Watch Music Videos</h2>
+      <video class="video-player" controls poster="https://via.placeholder.com/800x450?text=Video+Poster">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+   
+
+    <section id="top-songs">
+        <h2 class="section-title">🔥 Top Songs</h2>
+        <div class="card-grid">
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Top+Song+1" alt="Top Song 1" />
+            <h4>Hit Song 1</h4>
+            <p>Artist: Rock Star</p>
+            <p>Lyrics: Available</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Top+Song+2" alt="Top Song 2" />
+            <h4>Hit Song 2</h4>
+            <p>Artist: Melody Queen</p>
+            <p>Lyrics: Available</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="artists">
+        <h2 class="section-title">🎤 Featured Artists</h2>
+        <div class="card-grid">
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Artist+1" alt="Artist 1" />
+            <h4>DJ Thunder</h4>
+            <p>Genre: EDM</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Artist+2" alt="Artist 2" />
+            <h4>Harmony</h4>
+            <p>Genre: Pop</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="genres">
+        <h2 class="section-title">🎼 Explore Genres</h2>
+        <div class="card-grid">
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Genre+Rock" alt="Rock Genre" />
+            <h4>Rock</h4>
+            <p>Energetic, Powerful</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Genre+Romantic" alt="Romantic Genre" />
+            <h4>Romantic</h4>
+            <p>Soulful, Love</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Genre+HipHop" alt="HipHop Genre" />
+            <h4>Hip Hop</h4>
+            <p>Beats, Urban Vibes</p>
+          </div>
+        </div>
+      </section>
+
+
+    <section id="languages">
+        <h2 class="section-title">🌐 Songs by Language</h2>
+        <div class="card-grid">
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Hindi" alt="Hindi Songs" />
+            <h4>Hindi</h4>
+            <p>Top Bollywood Hits</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=English" alt="English Songs" />
+            <h4>English</h4>
+            <p>International Chartbusters</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Tamil" alt="Tamil Songs" />
+            <h4>Tamil</h4>
+            <p>Kuthu, Melody & More</p>
+          </div>
+          <div class="music-card">
+            <img src="https://via.placeholder.com/200?text=Telugu" alt="Telugu Songs" />
+            <h4>Telugu</h4>
+            <p>Rhythmic Tollywood Beats</p>
+          </div>
+        </div>
+      </section>
+  
+
+    <section class="yt-embed-section" id="yt-embed">
+      <h2>🎥 YouTube Music Playlist</h2>
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Music Mania | Developed by Avijit</p>
+    <p>
+      <a href="#top-songs">Top Songs</a> |
+      <a href="#video-player">Video</a> |
+      <a href="#playlist">Playlist</a> |
+      <a href="#yt-embed">YouTube Music</a> |
+      <a href="#" id="footerToggleTheme">Toggle Theme</a>
+    </p>
+  </footer>
+
+  <button id="goTopBtn">⬆</button>
+
+  <script>
+
+
+    const goTopBtn = document.getElementById('goTopBtn');
+
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    document.getElementById('footerToggleTheme').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.body.classList.toggle('dark-mode');
+    });
+
+    window.addEventListener('scroll', () => {
+      goTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+
+    goTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
+  </script>
+</body>
+</html>
