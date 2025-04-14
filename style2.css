@@ -233,22 +233,147 @@ body.dark-mode section h2 {
 }
 
 
-
-
-
-
-
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background: #4a00e0;
+/* Floating Chat Icon */
+.chat-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
-  margin-top: 3rem;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  font-size: 28px;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
 }
+
+.chat-float:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+
+
+
+/* Dashboard Gradients */
+.bg-gradient1 {
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.bg-gradient2 {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+.bg-gradient3 {
+  background: linear-gradient(to right, #cc2b5e, #753a88);
+}
+
+.dash-card {
+  border: none;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dash-card:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+/* Animated Gradient Footer */
+.footer {
+  background: linear-gradient(-45deg, #0334f9, #03dbfd, #28f7ed, #a18cd1);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: rgb(7, 7, 7);
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.footer h5 {
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.footer ul li {
+  list-style: none;
+  margin: 6px 0;
+}
+
+.footer ul li a {
+  color: #0b0b0b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #ffd700;
+}
+
+/* Contact Info and Social Icons */
+.footer p {
+  margin: 6px 0;
+}
+
+.social-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* Back to Top Button */
+.footer .btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer .btn:hover {
+  background: #333;
+  color: #090909;
+}
+
+
+.footer p {
+  text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 15px #f0f;
+}
+
+
+
+
+
 
 /* Dark Mode */
 body.dark-mode {
@@ -273,4 +398,61 @@ body.dark-mode .btn-custom {
 
 body.dark-mode .footer {
   background: #1a1a1a;
+}
+
+
+/* Ensure Footer Rows Stack on Small Screens */
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer .col-md-4 {
+      margin-bottom: 25px;
+  }
+
+  .footer h5 {
+      font-size: 18px;
+  }
+
+  .footer ul li a {
+      font-size: 14px;
+  }
+
+  .footer p {
+      font-size: 14px;
+  }
+
+  .social-icon {
+      font-size: 18px;
+      margin: 5px;
+  }
+
+  .footer .btn {
+      font-size: 13px;
+      padding: 5px 10px;
+  }
+}
+
+/* Tighter Layout for Extra Small Screens */
+@media (max-width: 480px) {
+  .footer {
+      padding: 30px 10px;
+  }
+
+  .footer h5 {
+      font-size: 16px;
+  }
+
+  .footer p,
+  .footer ul li a {
+      font-size: 13px;
+  }
+
+  .footer .btn {
+      font-size: 12px;
+      padding: 4px 8px;
+  }
 }
