@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Music Mania</title>
+  <link rel="stylesheet" href="admin-login.css">
+
+  
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#">Music Mania</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="signup.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span>&#9776;</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidenav" id="sidenav">
+    <a href="index.html">Home</a>
+    <a href="signup.html">Signup</a>
+    <a href="login.html">Login</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="content">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Enter Email" required />
+      <input type="password" id="loginPassword" placeholder="Enter Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Music Mania. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle sidebar visibility on mobile
+    document.getElementById("menuToggle").addEventListener("click", function() {
+      const sidenav = document.getElementById("sidenav");
+      sidenav.classList.toggle("open");
+    });
+
+    // Login functionality
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        alert("Login successful!");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid email or password.");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

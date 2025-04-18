@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | Music Mania</title>
+  <link rel="stylesheet" href="admin-signup.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#">Music Mania</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="signup.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span>&#9776;</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidenav" id="sidenav">
+    <a href="index.html">Home</a>
+    <a href="signup.html">Signup</a>
+    <a href="login.html">Login</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="content">
+    <h1>Sign Up</h1>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Enter Name" required />
+      <input type="email" id="email" placeholder="Enter Email" required />
+      <input type="password" id="password" placeholder="Enter Password" required />
+      <input type="file" id="photo" accept="image/*" />
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Music Mania. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle sidebar visibility on mobile
+    document.getElementById("menuToggle").addEventListener("click", function() {
+      const sidenav = document.getElementById("sidenav");
+      sidenav.classList.toggle("open");
+    });
+
+    // Signup form functionality
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const photoInput = document.getElementById("photo");
+
+      let photoURL = "";
+      if (photoInput.files && photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+          photoURL = reader.result;
+          const user = { name, email, password, photo: photoURL, isAdmin: false }; // Regular users will have isAdmin set to false
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+          users.push(user);
+          localStorage.setItem("users", JSON.stringify(users));
+          window.location.href = "login.html";
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        alert("Please upload a profile photo.");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

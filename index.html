@@ -16,21 +16,23 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">🎵 Music Mania</div>
-        <nav class="navbar">
-            <a class="navbar-brand" href="#">Music Mania</a>
-            <div class="nav-links">
-              <a class="nav-link" href="#top-songs">Top Songs</a>
-              <a class="nav-link" href="#romantic">Romantic</a>
-              <a class="nav-link" href="#artists">Artists</a>
-              <a class="nav-link" href="/dashboard.html">Dashboard</a>
-            </div>
-          </nav>
-          
-        <button id="toggleTheme">🌙 Dark Mode</button>
-      </header>
-    
+  <header>
+    <div class="logo">🎵 Music Mania</div>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/index.html">Music Mania</a>
+        <div class="nav-links">
+            <a class="nav-link" href="#top-songs">Top Songs</a>
+            <a class="nav-link" href="#romantic">Romantic</a>
+            <a class="nav-link" href="#artists">Artists</a>
+            <a class="nav-link" href="/admin-dashboard.html" id="adminLink" style="display:none;">Admin Dashboard</a> <!-- Admin Link -->
+            <a class="nav-link" href="/dashboard.html" id="userLink" style="display:none;">User Dashboard</a> <!-- User Link -->
+            <a class="nav-link" href="/ulogin.html">Login</a>
+            <a class="nav-link" href="/signup.html">Sign Up</a>
+        </div>
+    </nav>
+    <button id="toggleTheme">🌙 Dark Mode</button>
+</header>
+
 
 
 
@@ -251,6 +253,35 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Check user role (this would typically come from a server or localStorage after login)
+let userRole = localStorage.getItem('userRole'); // For example: "admin" or "user"
+
+// Display relevant links based on user role
+if (userRole === "admin") {
+    document.getElementById('adminLink').style.display = 'block'; // Show Admin Dashboard
+} else if (userRole === "user") {
+    document.getElementById('userLink').style.display = 'block'; // Show User Dashboard
+} else {
+    document.getElementById('adminLink').style.display = 'none'; // Hide Admin Dashboard if not logged in as admin
+    document.getElementById('userLink').style.display = 'none'; // Hide User Dashboard if not logged in as user
+}
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      let userRole = localStorage.getItem('userRole');
+      if (userRole === "admin") {
+          document.getElementById('adminLink').style.display = 'block';
+      } else if (userRole === "user") {
+          document.getElementById('userLink').style.display = 'block';
+      } else {
+          document.getElementById('adminLink').style.display = 'none';
+          document.getElementById('userLink').style.display = 'none';
+      }
+  });
+</script>
 
 
 
